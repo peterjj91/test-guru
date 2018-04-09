@@ -21,3 +21,19 @@
 /yarn-error.log
 
 .byebug_history
+
+.idea
+bower_components
+node_modules
+.DS_Store
+png
+Thumbs.db
+__MACOSX
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
