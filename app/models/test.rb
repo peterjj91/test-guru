@@ -5,7 +5,18 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
+  scope :by_level, -> (level) { where(level: level) }
+  scope :easy, -> { by_level(0..1) }
+  scope :intermediate, -> { by_level(2..4) }
+  scope :hard, -> { by_level(5..Float::INFINITY) }
+
+  scope :by_category_title, -> (category_title){joins(:category).where(categories: {title: category_title}).order("tests.title desc")}
+
+  validates :title, presence: true
+  validates :title, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+
   def self.tests_titles_by_category (category_title)
-    Test.joins('JOIN categories ON categories.id = tests.category_id').where('categories.title = :category', category: category_title).order('tests.title DESC').pluck('tests.title')
+    Test.by_category_title(category_title).pluck(:title)
   end
 end
