@@ -1,8 +1,7 @@
 class TestsController < ApplicationController
   before_action :find_test, only: [:index, :create]
   before_action :find_question, only: [:show, :destroy]
-
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
+  before_action :create_user, only: [:create]
 
   def index
     render html: index_page.html_safe
@@ -17,13 +16,23 @@ class TestsController < ApplicationController
   end
 
   def create
-    # @test.create(test_params)
-    test = Test.create(test_params)
-    render html: test.inspect
+    # в задании не было
+    # для выполнения нужен пользователь
+
+    test = @test.new(test_params)
+
+    render plain: test.inspect
+    # if test.save
+    #   render plain: 'The question was saved'
+    # else
+    #   render 'new'
+    # end
   end
 
   def destroy
-    # @questions.delete
+    # в задании не было
+
+    # @test.delete
   end
 
   def search
@@ -40,6 +49,10 @@ class TestsController < ApplicationController
 
   def find_question
     @questions = Question.all
+  end
+
+  def create_user
+    @user = User.last
   end
 
   def index_page
@@ -65,10 +78,6 @@ class TestsController < ApplicationController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
-  end
-
-  def rescue_with_test_not_found
-    render plain: 'Test was not found'
   end
 
 end
