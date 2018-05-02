@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only: [:index, :create]
   before_action :find_question, only: [:show, :destroy]
-  before_action :create_user, only: [:create]
 
   def index
     render html: index_page.html_safe
@@ -18,21 +17,13 @@ class TestsController < ApplicationController
   def create
     # в задании не было
     # для выполнения нужен пользователь
-
     test = @test.new(test_params)
 
     render plain: test.inspect
-    # if test.save
-    #   render plain: 'The question was saved'
-    # else
-    #   render 'new'
-    # end
   end
 
   def destroy
-    # в задании не было
-
-    # @test.delete
+    
   end
 
   def search
@@ -49,10 +40,6 @@ class TestsController < ApplicationController
 
   def find_question
     @questions = Question.all
-  end
-
-  def create_user
-    @user = User.last
   end
 
   def index_page

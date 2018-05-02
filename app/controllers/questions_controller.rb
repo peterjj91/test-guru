@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action(:find_test, {only: [:index, :create]})
-  before_action(:find_question, {only: [:show, :destroy]})
+  before_action :find_test, only: [:index, :create]
+  before_action :find_question, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -19,7 +19,8 @@ class QuestionsController < ApplicationController
   def create
     question = @test.questions.new(question_params)
     if question.save
-      render plain: 'The question was saved'
+      # render plain: 'The question was saved'
+      redirect_to action: "index"
     else
       render 'new'
     end
