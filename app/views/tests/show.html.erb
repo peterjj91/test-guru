@@ -1,0 +1,14 @@
+<h3>Test №<%= @test.id %>: <%= @test.title %></h3>
+
+<%= link_to 'Edit', edit_test_path, :class => "btn"  %>
+<%= link_to 'Delete', test_path, method: :delete, data: {confirm: 'Confirm delete'}, :class => "btn" %>
+<%= link_to 'Add question', new_test_question_path(@test), :class => "btn"  %>
+
+<h3>Список вопросов:</h3>
+<table>
+  <td>№</td>
+  <td>Text</td>
+  <td>Action</td>
+
+  <%= render partial: 'questions/question', collection: @test.questions %>
+</table>
