@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :user
+  # belongs_to :user
   has_many :questions
   has_many :tests_users
   has_many :users, through: :tests_users

@@ -25,7 +25,11 @@ class TestsController < ApplicationController
   end 
 
   def destroy
-    
+    if @test.destroy
+      redirect_to tests_path
+    else
+      render plain: 'Not deleted'
+    end
   end
 
   def edit 
