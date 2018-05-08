@@ -1,29 +1,49 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: [:index, :create]
+  before_action :find_test, only: [:index, :show, :create]
   before_action :find_question, only: [:show, :destroy]
 
   def index
-    render html: index_page.html_safe
+    @tests = Test.all
   end
 
   def show
-    render html: show_page.html_safe
+    @test = Test.find(params[:id])
   end
 
   def new
-
+    @test = Test.new
   end
 
   def create
-    # в задании не было
-    # для выполнения нужен пользователь
-    test = @test.new(test_params)
+    @test = Test.new(test_params)
 
-    render plain: test.inspect
-  end
+    if @test.save
+      redirect_to @test
+    else
+      render :new
+    end
+  end 
 
   def destroy
-    
+    if @test.destroy
+      redirect_to tests_path
+    else
+      render plain: 'Not deleted'
+    end
+  end
+
+  def edit 
+    @test = Test.find(params[:id])
+  end
+
+  def update
+    @test = Test.find(params[:id])
+
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
   end
 
   def search
@@ -40,27 +60,6 @@ class TestsController < ApplicationController
 
   def find_question
     @questions = Question.all
-  end
-
-  def index_page
-    html_string = "<h1>All tests:</h1><ul>"
-    @test.each { |test| html_string << "<li>ID - #{test.id} and TITLE - #{test.title}. </li>" }
-    html_string << "</ul><a href='/tests/new'>add questions</a>"
-    html_string
-  end
-
-  def show_page
-    params_id = params[:id]
-
-    html_string = "<h1>Question №#{params_id}</h1>"
-
-    @questions.each do |questions|
-      if questions.id == params_id.to_i
-        html_string << "<p>'#{questions.body}' with id ##{questions.id}</p>"
-      end
-    end
-
-    html_string
   end
 
   def test_params
