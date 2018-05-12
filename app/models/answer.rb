@@ -5,7 +5,8 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(answers: true) }
 
-  validate :answers_limit, on: :create
+  validates :body, presence: true
+  # validate :answers_limit, on: :create
 
   def self.answers_limit
     errors.add(:question, "Exceeded answers limit") if question.answers_count >= ANSWERS_LIMIT

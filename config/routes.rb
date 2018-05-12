@@ -1,10 +1,22 @@
-Rails.application.routes.draw do
-  get '/questions/:id/del', to: 'questions#destroy'
+ Rails.application.routes.draw do
+  root 'tests#index'
+  get '/tests/:category/:title', to: 'tests#search'
   
   resources :tests do
-    resources :questions, shallow: true
+    resources :questions, shallow: true, except: :index do
+      resources :answers, shallow: true, except: :index
+    end
+
+    member do
+      post :start
+    end
   end
 
-  get '/tests/:category/:title', to: 'tests#search'
+  resources :test_passages, only: %i[show update] do
+    member do
+      get :result
+    end
+  end
 
 end
+ 
