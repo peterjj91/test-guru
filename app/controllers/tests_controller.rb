@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :find_user, only: :start
-  before_action :new_test, only: :create
+  before_action :find_user, only: %i[start new]
+  before_action :new_test, only: %i[create]
 
   def index
     @tests = Test.all
@@ -10,7 +10,7 @@ class TestsController < ApplicationController
   def show; end
 
   def new
-    @test = Test.new
+    @test = @user.author_tests.new
   end
 
   def edit; end
@@ -25,7 +25,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to @test, notice: 'Success story!'
     else
       render :edit
     end
