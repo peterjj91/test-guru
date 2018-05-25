@@ -5,13 +5,29 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: %i[update create]
 
+  def completed?
+    current_question.nil?
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_question += 1
     end
 
-    self.current_question = next_question
-    save
+    # self.current_question = next_question
+    save!
+  end
+
+  def result
+    (self.correct_question.to_f / questions_count) * 100
+  end
+
+  def passed?
+    result >= 85
+  end
+
+  def questions_count
+    test.questions.count
   end
 
   private
