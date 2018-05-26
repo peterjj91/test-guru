@@ -2,9 +2,7 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: [:index, :create, :new]
   before_action :find_question, only: [:show, :update, :edit, :destroy]
 
-  def show
-    
-  end
+  def show; end
 
   def new
     @question = @test.questions.new

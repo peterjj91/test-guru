@@ -1,14 +1,24 @@
-<h3>Test №<%= @test.id %>: <%= @test.title %></h3>
+<p><strong>Title:</strong> <%= @test.title %></p>
+<p><strong>Level:</strong> <%= @test.level %></p>
 
-<%= link_to 'Edit', edit_test_path, :class => "btn"  %>
-<%= link_to 'Delete', test_path, method: :delete, data: {confirm: 'Confirm delete'}, :class => "btn" %>
-<%= link_to 'Add question', new_test_question_path(@test), :class => "btn"  %>
+<ul>
+  <li>
+    <%= link_to 'Edit test', edit_test_path, :class => "btn"  %>
+  </li>
+  <li>
+    <%= link_to 'Delete test', test_path, method: :delete, data: {confirm: 'Confirm delete'}, :class => "btn" %>
+  </li>
+  <li></li>
+  <li>
+    <%= link_to 'Add question', new_test_question_path(@test), :class => "btn"  %>
+  </li>
+</ul>
 
-<h3>Список вопросов:</h3>
+<h3>Questions:</h3>
 <table>
   <td>№</td>
   <td>Text</td>
-  <td>Action</td>
+  <td colspan="3">Action</td>
 
   <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
