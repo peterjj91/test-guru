@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
   before_action :find_user, only: %i[start new]
-  before_action :new_test, only: %i[create]
 
   def index
     @tests = Test.all
@@ -16,6 +15,9 @@ class TestsController < ApplicationController
   def edit; end
 
   def create
+    @test = Test.new(test_params)
+    @test.author = @user
+
     if @test.save
       redirect_to @test
     else
@@ -62,10 +64,6 @@ class TestsController < ApplicationController
 
   def find_user
     @user = User.first
-  end
-
-  def new_test
-    @test = Test.new(test_params)
   end
 
 end
