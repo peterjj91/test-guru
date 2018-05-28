@@ -1,4 +1,6 @@
 class TestsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :find_test, only: %i[show edit update destroy start]
   before_action :find_user, only: %i[start new]
 
@@ -16,10 +18,10 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-    @test.author = @user
+    @test.author = current_user
 
     if @test.save
-      redirect_to @test
+      redirect_to @test, notice: 'Test created'
     else
       render :new
     end
@@ -27,7 +29,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test, notice: 'Success story!'
+      redirect_to @test, notice: 'Test edited!'
     else
       render :edit
     end
@@ -35,7 +37,7 @@ class TestsController < ApplicationController
 
   def destroy
     if @test.destroy
-      redirect_to tests_path
+      redirect_to tests_path, notice: 'Test deleted!'
     else
       render plain: 'Not deleted'
     end
@@ -48,8 +50,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private

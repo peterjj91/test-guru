@@ -1,0 +1,21 @@
+.header {
+  &__container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__side {
+    float: right;
+    text-align: right;
+  }
+
+  &__nav {
+    padding: 0;
+    list-style: none;
+  }
+}
