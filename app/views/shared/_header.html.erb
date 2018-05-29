@@ -11,7 +11,7 @@
         <ul class="header__nav">
           <li><%= link_to 'Test list', tests_path, class: 'btn' %></li>
           <li><%= link_to 'Create test', new_test_path, class: 'btn' %></li>
-          <li><%= link_to 'Exit', logout_path, class: :btn %></li>
+          <li><%= link_to 'Exit', logout_path, method: :delete, class: :btn %></li>
         </ul>
       <% else %>
         <ul class="header__nav">
