@@ -1,6 +1,4 @@
 <%= form_with url: sessions_path, local: true do |form| %>
-  <%= render 'shared/flash-errors' %>
-
   <p>
     <%= form.label :email %>
     <%= form.text_field :email, id: :email %>

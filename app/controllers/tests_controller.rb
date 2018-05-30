@@ -10,7 +10,7 @@ class TestsController < ApplicationController
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.tests.new
   end
 
   def edit; end
