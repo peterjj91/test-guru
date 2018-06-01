@@ -1,8 +1,24 @@
 <div class="header">
-  <p>
-    <%= link_to 'List of tests', tests_path, class: 'btn' %>
-    &nbsp;&nbsp;&nbsp;
-    <%= link_to 'Create test', new_test_path, class: 'btn' %>
-  </p>
-  <br>
+  <nav class="header__container">
+    <div class="header__logo">
+      <%= link_to 'TestGuru', root_path, class: 'logo' %>
+    </div>
+
+    <div class="header__side">
+      <% if logged_in? %>
+        <p>Welcome, <b><%= current_user.email %></b>!</p>
+
+        <ul class="header__nav">
+          <li><%= link_to 'Test list', tests_path, class: 'btn' %></li>
+          <li><%= link_to 'Create test', new_test_path, class: 'btn' %></li>
+          <li><%= link_to 'Exit', logout_path, method: :delete, class: :btn %></li>
+        </ul>
+      <% else %>
+        <ul class="header__nav">
+          <li><%= link_to 'Sign up', signup_path, class: :btn %></li>
+          <li><%= link_to 'Sign in', login_path, class: :btn %></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
 </div>
