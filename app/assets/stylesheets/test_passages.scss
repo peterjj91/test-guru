@@ -1,7 +1,14 @@
-.passed {
-  color: green;
+.alert {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 5px;
+
+  &-notice {
+    border-color: #3c85e0;
+  }
+
+  &-success {
+    border-color: green;
+  }
 }
 
-.failed {
-  color: red;
-}

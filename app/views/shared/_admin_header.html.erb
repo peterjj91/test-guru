@@ -1,7 +1,7 @@
-<div class="header">
+<div class="header header--admin">
   <nav class="header__container">
     <div class="header__logo">
-      <%= link_to 'TestGuru', root_path, class: 'logo' %>
+      <%= link_to 'TestGuru Admin Panel', root_path, class: 'logo' %>
     </div>
 
     <div class="header__side">
@@ -9,6 +9,7 @@
         <p>Welcome, <b><%= current_user.email %></b>!</p>
 
         <ul class="header__nav">
+          <li><%= link_to 'Create test', new_admin_test_path, class: 'btn' %></li>
           <li><%= link_to 'Exit', destroy_user_session_path, method: :delete, class: :btn %></li>
         </ul>
       <% else %>
