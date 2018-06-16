@@ -6,7 +6,7 @@
 
     <div class="header__side">
       <% if user_signed_in? %>
-        <p>Welcome, <b><%= current_user.email %></b>!</p>
+        <p>Welcome, <b><%= current_user.full_name %></b>!</p>
 
         <ul class="header__nav">
           <li><%= link_to 'Exit', destroy_user_session_path, method: :delete, class: :btn %></li>

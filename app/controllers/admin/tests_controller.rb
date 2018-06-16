@@ -16,7 +16,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.author = current_user
+    @test.authors.push(current_user)
 
     if @test.save
       redirect_to [:admin, @test], notice: 'Test created'
@@ -39,17 +39,6 @@ class Admin::TestsController < Admin::BaseController
     else
       render plain: 'Not deleted'
     end
-  end
-
-  def search
-    result = ["Class #{params.class}", "Parameters #{params.inspect}"]
-
-    render plain: result.join("\n")
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

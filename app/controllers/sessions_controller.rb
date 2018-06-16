@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::SessionsController
 
   def new; end
 
@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to cookies[:current_url]
+      flash[:notice] = "Hello, #{current_user.full_name}!"
     else
       flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
       render :new
