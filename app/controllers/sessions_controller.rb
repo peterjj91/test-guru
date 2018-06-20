@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class SessionsController < Devise::SessionsController
 
   #def new; end
 
@@ -14,6 +14,11 @@ class Users::SessionsController < Devise::SessionsController
 #      render :new
 #    end
 #  end
+
+  def create
+    super
+    flash[:notice] = 'Hello, #{current_user.full_name}'
+  end
 
   #def destroy
   #  session[:user_id] = nil
