@@ -27,8 +27,6 @@ en:
         update: "Update Account"
         delete: "Cancel my account"
         login: "Enter"
-      password:
-        new: "Send me"
     label:
       test:
         title: "Title"
