@@ -1,10 +1,10 @@
-<h3>Test <%= @test_passage.test.title %> completed!</h3>
+<h3><%= t('.header', title: @test_passage.test.title)%></h3>
 
-<h3>Your score:
+<h3><%= t('.score') %>:
   <span class="<%= @test_passage.passed? ? 'passed' : 'failed' %>">
     <%= number_to_percentage(@test_passage.result, precision: 2) %>
   </span>
 </h3>
 
-<h4>Answered correctly for <%= @test_passage.correct_question %> of <%= @test_passage.questions_count %> questions</h4>
-<%= link_to 'To the list of tests', tests_path, :class => "btn"  %>
+<h4><%= t('.answered_correctly', correct_question: @test_passage.correct_question, questions_count: @test_passage.questions_count )%></h4>
+<%= link_to t('helpers.page.main'), tests_path, :class => "btn"  %>

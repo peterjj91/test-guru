@@ -1,4 +1,4 @@
-<%= form_with model: [@question, @answer], local: true do |form| %>
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <%= render 'shared/errors', resource: @answer %>
   
   <p>
@@ -11,5 +11,5 @@
     <%= form.check_box :correct, id: :answer_correct %>
   </p>
 
-  <p><%= form.submit 'Create answer' %></p>
+  <p><%= form.submit %></p>
 <% end %>

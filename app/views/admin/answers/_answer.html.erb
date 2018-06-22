@@ -1,0 +1,6 @@
+<li>
+  <%= answer.body %>
+  <%= link_to t('helpers.submit.answer.view'), admin_answer_path(answer) %>
+  <%= link_to t('helpers.submit.answer.edit'), edit_admin_answer_path(answer) %>
+  <%= link_to t('helpers.submit.answer.delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('helpers.delete') } %>
+</li>

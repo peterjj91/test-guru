@@ -1,0 +1,13 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.body %></td>
+  <td>
+    <%= link_to t('helpers.submit.question.view'), admin_question_path(question) %>
+  </td>
+  <td>
+    <%= link_to t('helpers.submit.question.edit'), edit_admin_question_path(question) %>
+  </td>
+  <td>
+    <%= link_to t('helpers.submit.question.delete'), admin_question_path(question), method: :delete, data: {confirm: t('helpers.delete')} %>
+  </td>
+</tr>

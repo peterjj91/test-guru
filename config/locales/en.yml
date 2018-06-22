@@ -1,33 +1,123 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers: 
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+        start: "Start"
+        edit: "Edit"
+        delete: "Delete"
+      question:
+        create: "Create question"
+        add: "Add question"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+      answer:
+        create: "Create answer"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        new: "New answer"
+        update: "Update answer"
+      user:
+        create: "Create User"
+        update: "Update Account"
+        delete: "Cancel my account"
+        login: "Enter"
+      password:
+        new: "Send me"
+    label:
+      test:
+        title: "Title"
+        level: "level"
+        questions: "Questions"
+        action: "Action"
+        category_id: "Category"
+        text: "Text"
+      question:
+        body: "Body"
+        correct: "Correct"
+        new:
+          header: "Create a new question for the test:"
+        edit:
+          header: "Edit question for test"
+      answer:
+        body: "Body"
+        correct: "Correct"
+    page:
+      back: 'Back'
+      main: 'To Home Page'
+    delete: "Confirm delete?"
+
+  shared:
+    errors:
+      header: 
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    header:
+        sign_up: "Registration"
+        sign_in: "Login"
+        exit: "Exit"
+    admin_header:
+        panel_title: "TestGuru Admin Panel"
+        welcome: "Welcome"
+        sign_up: "Registration"
+        sign_in: "Login"
+        exit: "Exit"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+
+  test_passages:
+    result:
+      header: "The %{title} Test was Completed!"
+      score: "Your score"
+      answered_correctly: "Answered correctly for %{correct_question} of %{questions_count} questions"
+    show:
+      header: "Passing the test"
+      next: "Next"
+
+  admin:
+    answers:
+      new:
+        title: "New Answer"
+      show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+      edit:
+        header: "Editing Answer"
+    tests:
+      create:
+        success: "Test was successfully created."
+      test:
+        edit: "Edit"
+        delete: "Delete"
+      index:
+        header: "Tricky Tests"
+      new: 
+        header: "New test"
+      show: 
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+      edit: 
+        header: "Edit test"
+      update: 
+        success: "Test edited!"
+    questions:
+      new: 
+        header: "New question"
+      edit:
+        header: "Edit question"
+      show: 
+        header: 'Question'
+        answers: 'Answers'
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"

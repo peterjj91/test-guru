@@ -1,0 +1,7 @@
+<h1><%= t('.title') %></h1>
+
+<p><%= @question.body %></p>
+
+<%= render 'form' %>
+
+<%= link_to t('helpers.page.back'), admin_question_path(@question) %>

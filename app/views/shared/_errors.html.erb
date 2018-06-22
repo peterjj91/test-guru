@@ -1,6 +1,8 @@
 <% if resource.errors.present? %>
-  <div>
-    <p><%= pluralize(resource.errors.count, 'error') %> detected:</p>
+  <div id="error_explanation">
+    <p>
+      <%= t('.header', count: resource.errors.count) %>:
+    </p>
 
     <ul>
       <% resource.errors.full_messages.each do |message| %>

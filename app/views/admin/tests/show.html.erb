@@ -1,24 +1,24 @@
-<p><strong>Title:</strong> <%= @test.title %></p>
-<p><strong>Level:</strong> <%= @test.level %></p>
+<p><strong><%= t('.title') %>:</strong> <%= @test.title %></p>
+<p><strong><%= t('.level') %>:</strong> <%= @test.level %></p>
 
 <ul>
   <li>
-    <%= link_to 'Edit test', edit_admin_test_path, :class => "btn"  %>
+    <%= link_to t('helpers.submit.test.edit'), edit_admin_test_path, :class => "btn"  %>
   </li>
   <li>
-    <%= link_to 'Delete test', admin_test_path, method: :delete, data: {confirm: 'Confirm delete'}, :class => "btn" %>
+    <%= link_to t('helpers.submit.test.delete'), admin_test_path, method: :delete, data: {confirm: t('helpers.delete') }, :class => "btn" %>
   </li>
   <li></li>
   <li>
-    <%= link_to 'Add question', new_test_question_path(@test), :class => "btn"  %>
+    <%= link_to t('helpers.submit.question.add'), new_admin_test_question_path(@test), :class => "btn"  %>
   </li>
 </ul>
 
-<h3>Questions:</h3>
+<h3><%= t('.questions') %></h3>
 <table>
   <td>№</td>
-  <td>Text</td>
-  <td colspan="3">Action</td>
+  <td><%= t('helpers.label.test.text') %></td>
+  <td colspan="4"><%= t('helpers.label.test.action') %></td>
 
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @test.questions %>
 </table>

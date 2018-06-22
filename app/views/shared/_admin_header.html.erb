@@ -1,21 +1,21 @@
 <div class="header header--admin">
   <nav class="header__container">
     <div class="header__logo">
-      <%= link_to 'TestGuru Admin Panel', root_path, class: 'logo' %>
+      <%= link_to t('.panel_title'), admin_tests_path, class: 'logo' %>
     </div>
 
     <div class="header__side">
       <% if user_signed_in? %>
-        <p>Welcome, <b><%= current_user.email %></b>!</p>
+        <p><%= t('.welcome') %>, <b><%= current_user.email %></b>!</p>
 
         <ul class="header__nav">
-          <li><%= link_to 'Create test', new_admin_test_path, class: 'btn' %></li>
-          <li><%= link_to 'Exit', destroy_user_session_path, method: :delete, class: :btn %></li>
+          <li><%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: 'btn' %></li>
+          <li><%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: :btn %></li>
         </ul>
       <% else %>
         <ul class="header__nav">
-          <li><%= link_to 'Sign up', new_user_registration_path, class: :btn %></li>
-          <li><%= link_to 'Sign in', new_user_session_path, class: :btn %></li>
+          <li><%= link_to t('.sign_up'), new_user_registration_path, class: :btn %></li>
+          <li><%= link_to t('.sign_in'), new_user_session_path, class: :btn %></li>
         </ul>
       <% end %>
     </div>

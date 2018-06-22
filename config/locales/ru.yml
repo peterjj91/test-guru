@@ -1,33 +1,125 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 ru:
   hello: "Привет мир"
+
+  helpers: 
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+        start: "Начать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      question:
+        create: "Создать вопрос"
+        add: "Добавить вопрос"
+        view: "Подробнее"
+        edit: "Редактировать"
+        delete: "Удалить"
+      answer:
+        create: "Создать ответ"
+        view: "Подробнее"
+        edit: "Редактировать"
+        delete: "Удалить"
+        new: "Новый ответ"
+        update: "Обновить ответ"
+      user:
+        create: "Создать пользователя"
+        update: "Обновить аккаунт"
+        delete: "Удалить мой аккаунт"
+        login: "Войти"
+      test_passages:
+        next: "Дальше"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        action: "Действия"
+        category_id: "Категория"
+        text: "Текст"
+      question:
+        body: "Поле"
+        correct: "Правильный ответ"
+        new:
+          header: "Создайте новый вопрос для теста"
+        edit:
+          header: "Изменить вопрос для теста"
+      answer:
+        body: "Поле"
+        correct: "Правильный ответ"
+    page:
+      back: 'Назад'
+      main: 'На главную страницу'
+    delete: "Подтвердить удаление?"
+
+  shared:
+    errors:
+      header: 
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    header:
+        sign_up: "Регистрация"
+        sign_in: "Вход"
+        exit: "Выход"
+    admin_header:
+        panel_title: "Панель Администратора TestGuru"
+        welcome: "Добро пожаловать"
+        sign_up: "Регистрация"
+        sign_in: "Вход"
+        exit: "Выход"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
+      score: "Ваши очки"
+      answered_correctly: "Правильно ответили на %{correct_question} их %{questions_count} вопросов."
+    show:
+      header: "Прохождение теста"
+      next: "Дальше"
+
+  admin:
+    answers:
+      new:
+        title: "Новый ответ"
+      show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильно"
+      edit:
+        header: "Редактирование ответа"
+    tests:
+      create:
+        success: "Тест успешно создан."
+      test:
+        edit: "Редактировать"
+        delete: "Удалить"
+      index:
+        header: "Доступные Тесты"
+      new: 
+        header: "Новый тест"
+      show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+      edit: 
+        header: "Редактировать тест"
+      update: 
+        success: "Тест изменён!"
+    questions:
+      new: 
+        header: "Новый вопрос"
+      edit:
+        header: "Редактировать вопрос"
+      show: 
+        header: 'Вопрос'
+        answers: 'Ответ'
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGutu!"

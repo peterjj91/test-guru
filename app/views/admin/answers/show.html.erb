@@ -1,0 +1,9 @@
+<h1><%= t('.header') %></h1>
+
+<p><%= @answer.question.body %></p>
+
+<p><strong><%= t('.answer') %>:</strong> <%= @answer.body %></p>
+
+<p><strong><%= t('.correct') %>:</strong> <%= @answer.correct %> </p>
+
+<%= link_to t('helpers.page.back'), admin_question_path(@answer.question) %>
