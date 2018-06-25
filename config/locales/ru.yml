@@ -60,11 +60,12 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     header:
+        panel_title: "Панель Администратора"
         sign_up: "Регистрация"
         sign_in: "Вход"
         exit: "Выход"
     admin_header:
-        panel_title: "Панель Администратора TestGuru"
+        panel_title: "Панель Администратора"
         welcome: "Добро пожаловать"
         sign_up: "Регистрация"
         sign_in: "Вход"

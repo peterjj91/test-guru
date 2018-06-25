@@ -56,11 +56,12 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     header:
+        panel_title: "Admin Panel"
         sign_up: "Registration"
         sign_in: "Login"
         exit: "Exit"
     admin_header:
-        panel_title: "TestGuru Admin Panel"
+        panel_title: "Admin Panel"
         welcome: "Welcome"
         sign_up: "Registration"
         sign_in: "Login"

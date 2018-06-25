@@ -3,19 +3,19 @@
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="mr-auto">
-      <%= link_to t('.panel_title'), admin_tests_path, class: '' %>
+      
     </div>
 
     <form class="header__side form-inline mt-2 mt-md-0 ">
       <% if user_signed_in? %>
-        <span class="nav-link"><%= welcome_message(current_user) %></b>!</span>
+        <span class="text-white"><%= welcome_message(current_user) %></b>!</span>
 
         <ul class="navbar-nav">
           <li class="nav-link">
-            <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: ["btn", "nav-link"] %>
+            <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: ["btn btn-success", "nav-link"] %>
           </li>
           <li class="nav-link">
-            <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn", "nav-link"] %>
+            <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn ", "nav-link"] %>
           </li>
         </ul>
       <% else %>
