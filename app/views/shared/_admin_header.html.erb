@@ -1,23 +1,33 @@
-<div class="header header--admin">
-  <nav class="header__container">
-    <div class="header__logo">
-      <%= link_to t('.panel_title'), admin_tests_path, class: 'logo' %>
+<nav class="header header--admin navbar navbar-expand-md align-items-center fixed-top border-bottom box-shadow">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="mr-auto">
+      <%= link_to t('.panel_title'), admin_tests_path, class: '' %>
     </div>
 
-    <div class="header__side">
+    <form class="header__side form-inline mt-2 mt-md-0 ">
       <% if user_signed_in? %>
-        <p><%= t('.welcome') %>, <b><%= current_user.email %></b>!</p>
+        <span class="nav-link"><%= welcome_message(current_user) %></b>!</span>
 
-        <ul class="header__nav">
-          <li><%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: 'btn' %></li>
-          <li><%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: :btn %></li>
+        <ul class="navbar-nav">
+          <li class="nav-link">
+            <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: ["btn", "nav-link"] %>
+          </li>
+          <li class="nav-link">
+            <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn", "nav-link"] %>
+          </li>
         </ul>
       <% else %>
-        <ul class="header__nav">
-          <li><%= link_to t('.sign_up'), new_user_registration_path, class: :btn %></li>
-          <li><%= link_to t('.sign_in'), new_user_session_path, class: :btn %></li>
+        <ul class="navbar-nav">
+          <li class="nav-link">
+            <%= link_to t('.sign_up'), new_user_registration_path, class: ["btn", "nav-link"] %>
+          </li>
+          <li class="nav-link">
+            <%= link_to t('.sign_in'), new_user_session_path, class: ["btn", "nav-link"] %>
+          </li>
         </ul>
       <% end %>
-    </div>
-  </nav>
-</div>
+    </form>
+  </div>
+</nav>

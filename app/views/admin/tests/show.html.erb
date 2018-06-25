@@ -3,19 +3,19 @@
 
 <ul>
   <li>
-    <%= link_to t('helpers.submit.test.edit'), edit_admin_test_path, :class => "btn"  %>
+    <%= link_to t('helpers.submit.test.edit'), edit_admin_test_path, :class => "btn btn-info"  %>
   </li>
   <li>
-    <%= link_to t('helpers.submit.test.delete'), admin_test_path, method: :delete, data: {confirm: t('helpers.delete') }, :class => "btn" %>
+    <%= link_to t('helpers.submit.test.delete'), admin_test_path, method: :delete, data: { confirm: t('helpers.delete') }, :class => "btn btn-danger" %>
   </li>
   <li></li>
   <li>
-    <%= link_to t('helpers.submit.question.add'), new_admin_test_question_path(@test), :class => "btn"  %>
+    <%= link_to t('helpers.submit.question.add'), new_admin_test_question_path(@test), :class => "btn btn-success"  %>
   </li>
 </ul>
 
 <h3><%= t('.questions') %></h3>
-<table>
+<table class="table">
   <td>№</td>
   <td><%= t('helpers.label.test.text') %></td>
   <td colspan="4"><%= t('helpers.label.test.action') %></td>

@@ -1,12 +1,21 @@
 <p><%= question_header(@question) %></p>
 
-<%= form_with model: [:admin, @test, @question], local: true do |form| %>
-  <%= render 'shared/errors', resource: @question %>
+<div class="row">
+  <div class="form-promo col-sm-5">
+  <%= form_with model: [:admin, @test, @question], local: true do |form| %>
+    <%= render 'shared/errors', resource: @question %>
 
-  <p>
-    <%= form.label :body %>
-    <%= form.text_field :body %>  
-  </p>
+    <div class="form-group row">
+      <div class="col-sm-3">
+        <%= form.label :body, :class => 'col-form-label' %>
+      </div>
 
-  <p><%= form.submit %></p>
-<% end %>
+      <div class="col-sm-9">
+        <%= form.text_field :body, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <p><%= form.submit :class => "btn btn-success" %></p>
+  <% end %>
+  </div>
+</div>

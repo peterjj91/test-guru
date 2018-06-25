@@ -1,0 +1,109 @@
+@import 'bootstrap';
+
+body {
+  padding-top: 5rem;
+}
+
+.header {
+  background-color: white;
+  height: 60px;
+
+  &__container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__side {
+    float: right;
+    text-align: right;
+  }
+
+  &__nav {
+    padding: 0;
+    list-style: none;
+  }
+
+  &--admin {
+    background-color: #4293e6;
+    padding: 0px 25px;
+
+    .header {
+      &__logo {
+        font-size: 30px;
+        margin: 25px 0px;
+        text-decoration: none;
+        line-height: normal;
+      }
+    }
+
+    a {
+      color: white;
+
+      &:hover, &:focus, &:visited {
+        color: white;
+      }
+    }
+
+    p {
+      color: white;
+    }
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  border-radius: 5px;
+
+  label {
+    margin-top: .5rem;
+    padding: 0px 10px;
+  }
+}
+
+table {
+  text-align: left;
+}
+
+#error_explanation {
+  width: 450px;
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+
+  h2 {
+    font-size: 12px;
+    color: #818182;
+    background-color: #fefefe;
+    border-color: #fdfdfe;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.form-promo {
+  // max-width: 300px;
+  margin-bottom: 30px;
+}

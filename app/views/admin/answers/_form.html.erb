@@ -1,15 +1,30 @@
-<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-  <%= render 'shared/errors', resource: @answer %>
-  
-  <p>
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>  
-  </p>
+<div class="row">
+  <div class="form-promo col-sm-6">
+  <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+    <%= render 'shared/errors', resource: @answer %>
+    
+    <div class="form-group row">
+      <div class="col-sm-4">
+        <%= form.label :body, :class => 'col-form-label' %>
+      </div>
 
-  <p>
-    <%= form.label :correct %>
-    <%= form.check_box :correct, id: :answer_correct %>
-  </p>
+      <div class="col-sm-8">
+        <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60, :class => 'form-control' %>
+      </div>
+    </div>
 
-  <p><%= form.submit %></p>
-<% end %>
+    <div class="form-group form-check row">
+      <div class="col-sm-4">
+        <%= form.check_box :correct, id: :answer_correct, :class => 'form-check-input' %>
+        
+      </div>
+
+      <div class="col-sm-8">
+        <%= form.label :correct, :class => 'form-check-label' %>
+      </div>
+    </div>
+
+    <p><%= form.submit :class => 'btn btn-success' %></p>
+  <% end %>
+  </div>
+</div>

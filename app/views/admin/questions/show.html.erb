@@ -4,10 +4,10 @@
 
 <h2><%= t('.answers') %></h2>
 
-<%= link_to t('helpers.submit.answer.new'), new_admin_question_answer_path(@question) %>
-
-<ol>
+<table class="table">
   <%= render @question.answers %>
-</ol>
+</table>
+
+<p><%= link_to t('helpers.submit.answer.new'), new_admin_question_answer_path(@question), :class => 'btn btn-primary' %></p>
 
 <%= link_to t('helpers.page.back'), admin_test_path(@question.test), :class => "btn"  %>

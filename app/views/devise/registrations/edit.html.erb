@@ -1,50 +1,54 @@
 <h2><%= t('.header') %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="row">
+  <div class="form-promo col-sm-5">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email, t('.email') %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :email, t('.email'), :class => 'col-form-label' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :first_name, t('.first_name') %><br />
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
+    <div class="form-group">
+      <%= f.label :first_name, t('.first_name'), :class => 'col-form-label' %><br />
+      <%= f.text_field :first_name, autofocus: true, :class => 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name, t('.last_name') %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
+    <div class="form-group">
+      <%= f.label :last_name, t('.last_name'), :class => 'col-form-label' %><br />
+      <%= f.text_field :last_name, autofocus: true, :class => 'form-control' %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password, t('.password') %> <i>(<%= t('.leave_blank') %>)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= t('.minimum_characters', count: @minimum_password_length) %></em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, t('.password_confirmation') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :password, t('.password'), :class => 'col-form-label' %> <i>(<%= t('.leave_blank') %>)</i><br />
+      <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= t('.minimum_characters', count: @minimum_password_length) %></em>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password, t('.current_password') %> <i>(<%= t('.password_help') %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, t('.password_confirmation'), :class => 'col-form-label' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="form-group">
+      <%= f.label :current_password, t('.current_password'), :class => 'col-form-label' %> <i>(<%= t('.password_help') %>)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
 
 <h3><%= t('.cancel_title') %></h3>
 
