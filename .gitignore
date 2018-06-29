@@ -23,7 +23,7 @@
 .byebug_history
 
 .idea
-constants.env
+.env
 bower_components
 node_modules
 .DS_Store
