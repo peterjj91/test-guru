@@ -10,5 +10,6 @@
     </p>
   <% end %>
 
+  <%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-success' %>
   <p><%= form.submit t('.next'), :class => 'btn btn-success' %></p>
  <% end %>

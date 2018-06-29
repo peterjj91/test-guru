@@ -1,5 +1,6 @@
 en:
-  hello: "Hello world"
+  gist_description: "A question about %{title} from TestGuru"
+  gist_filename: "Question_from_TestGuru.txt"
 
   helpers: 
     submit:
@@ -79,6 +80,10 @@ en:
     show:
       header: "Passing the test"
       next: "Next"
+      gist: "Create a Gist"
+    gist:
+      success: 'Gist успешно создан'
+      failure: 'Во время сохранения Gist произошла ошибка'
 
   admin:
     answers:

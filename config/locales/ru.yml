@@ -1,5 +1,6 @@
 ru:
-  hello: "Привет мир"
+  gist_description: "Вопрос про %{title} с TestGuru"
+  gist_filename: "Вопрос_из_TestGuru.txt"
 
   helpers: 
     submit:
@@ -83,6 +84,10 @@ ru:
     show:
       header: "Прохождение теста"
       next: "Дальше"
+      gist: "Создать Gist"
+    gist:
+      success: 'Gist was successfully created!'
+      failure: 'An error occurred while saving gist'
 
   admin:
     answers:

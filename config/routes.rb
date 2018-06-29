@@ -18,6 +18,7 @@
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+      post :gist
     end
   end
 
@@ -27,6 +28,8 @@
         resources :answers, shallow: true
       end
     end
+
+    resources :gists, only: :index
   end
 
 end

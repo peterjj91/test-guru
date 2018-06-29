@@ -16,8 +16,8 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.authors.push(current_user)
-    # @test.author = current_user
+    # @test.authors.push(current_user)
+    @test.author = current_user
 
     if @test.save
       redirect_to [:admin, @test], notice: t('.success')

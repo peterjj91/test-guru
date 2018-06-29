@@ -30,9 +30,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# AUTH
 gem 'devise', '~> 4.0'
 
-# Localization
+# NETWORKING
+gem 'faraday'
+gem 'octokit', '~> 4.0'
+
+# LOCALIZATION
 gem 'rails-i18n', '~> 5.0.0'
 
 # Use Capistrano for deployment

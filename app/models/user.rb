@@ -39,4 +39,8 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def add_gist(question, url)
+    gists.create(question: question, gist: url)
+  end
+
 end
