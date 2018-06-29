@@ -48,6 +48,8 @@ ru:
       answer:
         body: "Поле"
         correct: "Правильный ответ"
+    select:
+      gist: "Создать Gist"
     page:
       back: 'Назад'
       main: 'На главную страницу'
@@ -71,6 +73,7 @@ ru:
         sign_up: "Регистрация"
         sign_in: "Вход"
         exit: "Выход"
+        all_gists: "Гисты"
 
   tests:
     index:
@@ -86,8 +89,8 @@ ru:
       next: "Дальше"
       gist: "Создать Gist"
     gist:
-      success: 'Gist was successfully created!'
-      failure: 'An error occurred while saving gist'
+      success: "Gist успешно сохранен! <b><a href='%{url}' target='_blank'>ПЕРЕЙТИ</a></b>"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     answers:
@@ -125,6 +128,11 @@ ru:
       show: 
         header: 'Вопрос'
         answers: 'Ответ'
+    gists:
+      index:
+        user: "Пользователь"
+        question: "Вопрос"
+        gist: "Gist"
 
   tests_mailer:
     completed_test:

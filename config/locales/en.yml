@@ -46,6 +46,8 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      select:
+        gist: "Create a Gist"
     page:
       back: 'Back'
       main: 'To Home Page'
@@ -67,6 +69,7 @@ en:
         sign_up: "Registration"
         sign_in: "Login"
         exit: "Exit"
+        all_gists: "All Gists"
 
   tests:
     index:
@@ -82,8 +85,8 @@ en:
       next: "Next"
       gist: "Create a Gist"
     gist:
-      success: 'Gist успешно создан'
-      failure: 'Во время сохранения Gist произошла ошибка'
+      success: "Gist was successfully created! <b><a href='%{url}' target='_blank'>LINK</a></b>"
+      failure: "An error occurred while saving gist"
 
   admin:
     answers:
@@ -118,9 +121,14 @@ en:
         header: "New question"
       edit:
         header: "Edit question"
-      show: 
+      show:
         header: 'Question'
         answers: 'Answers'
+    gists:
+      index:
+        user: "User"
+        question: "Question"
+        gist: "Gist"
 
   tests_mailer:
     completed_test:

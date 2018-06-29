@@ -12,7 +12,13 @@
 
         <ul class="navbar-nav">
           <li class="nav-link">
+            <%= select_language %>              
+          </li>
+          <li class="nav-link">
             <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: ["btn btn-success", "nav-link"] %>
+          </li>
+          <li class="nav-link">
+            <%= link_to t('.all_gists'), admin_gists_path, class: ['btn nav-link'] %>
           </li>
           <li class="nav-link">
             <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn ", "nav-link"] %>
@@ -20,6 +26,9 @@
         </ul>
       <% else %>
         <ul class="navbar-nav">
+          <li class="nav-link">
+            <%= select_language %>              
+          </li>
           <li class="nav-link">
             <%= link_to t('.sign_up'), new_user_registration_path, class: ["btn", "nav-link"] %>
           </li>

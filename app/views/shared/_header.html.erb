@@ -16,11 +16,17 @@
 
         <ul class="navbar-nav">
           <li class="nav-link">
+            <%= select_language %>              
+          </li>
+          <li class="nav-link">
             <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn", "nav-link"] %>
           </li>
         </ul>
       <% else %>
         <ul class="navbar-nav">
+          <li class="nav-link">
+            <%= select_language %>              
+          </li>
           <li class="nav-link">
             <%= link_to t('.sign_up'), new_user_registration_path, class: ["btn", "nav-link"] %>
           </li>

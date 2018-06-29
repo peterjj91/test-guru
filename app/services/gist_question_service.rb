@@ -3,8 +3,7 @@ class GistQuestionService
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    # @client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
-    @client = client || GitHubClient.new
+    @client = client || Octokit::Client.new(access_token: '854d85803959e8fb77b2b88794e633960044e6fd')
   end
 
   def call
