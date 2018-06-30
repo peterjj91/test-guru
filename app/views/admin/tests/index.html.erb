@@ -2,7 +2,11 @@
 
 <table class="table">
   <tr>
-    <th><%= t('helpers.label.test.title') %></th>
+    <th class="sort-by-title pointer">
+      <%= t('helpers.label.test.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th><%= t('helpers.label.test.level') %></th>
     <th><%= t('helpers.label.test.questions') %></th>
     <th colspan="3"><%= t('helpers.label.test.action') %></th>

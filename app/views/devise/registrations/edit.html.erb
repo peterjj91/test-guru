@@ -35,7 +35,7 @@
 
     <div class="form-group">
       <%= f.label :password_confirmation, t('.password_confirmation'), :class => 'col-form-label' %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :onkeyup => "checkPass(); return false;" %>
     </div>
 
     <div class="form-group">
@@ -44,7 +44,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: 'btn btn-success' %>
     </div>
   <% end %>
   </div>
@@ -52,6 +52,6 @@
 
 <h3><%= t('.cancel_title') %></h3>
 
-<p><%= button_to t('helpers.submit.user.delete'), registration_path(resource_name), data: { confirm: t('helpers.delete') }, method: :delete %></p>
+<p><%= button_to t('helpers.submit.user.delete'), registration_path(resource_name), data: { confirm: t('helpers.delete') }, method: :delete, class: 'btn btn-danger' %></p>
 
 <%= link_to t('helpers.page.back'), :back %>
