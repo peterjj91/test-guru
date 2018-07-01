@@ -1,12 +1,25 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
-  <td><%= test.level %></td>
-  <td><%= test.questions.count %></td>
-  <td><%= button_to t('helpers.submit.test.start'), start_test_path(test), :class => ['btn', 'btn-primary'] %></td>
-  <td>
-    <%= link_to t('helpers.submit.test.edit'), edit_admin_test_path(test) %>
+  <td class="align-middle">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td>
-    <%= link_to t('helpers.submit.test.delete'), admin_test_path(test), method: :delete, data: {confirm: t('helpers.delete')} %>
+  <td class="align-middle"><%= test.level %></td>
+  <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle">
+    <%= button_to t('helpers.submit.test.start'), 
+                  start_test_path(test), 
+                  :class => ['btn', 'btn-primary'] %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('helpers.submit.test.edit'), 
+                edit_admin_test_path(test), 
+                data: { test_id: test.id },
+                class: 'form-inline-link' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('helpers.submit.test.delete'), 
+                admin_test_path(test), 
+                method: :delete, 
+                data: {confirm: t('helpers.delete')} %>
   </td>
 </tr>

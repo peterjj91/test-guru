@@ -30,6 +30,10 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def current_question_index
+    test.questions.index(current_question) + 1 unless completed?
+  end
+
   private
 
   def before_validation_set_first_question

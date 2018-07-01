@@ -1,15 +1,25 @@
  <h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
 
- <p><strong><%= @test_passage.current_question.body %></strong></p>
+<div class="progress test-progress">
+  <%= content_tag :div, '',
+                  class: 'progress progress-bar progress-bar-striped bg-success',
+                  id: 'test-progress',
+                  style: "",
+                  data: { question_number: @test_passage.current_question_index,
+                          questions_count: @test_passage.questions_count } %>
+</div>
 
- <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answers_ids_#{b.object_id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+<p><strong><%= @test_passage.current_question.body %></strong></p>
 
-  <%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-success' %>
-  <p><%= form.submit t('.next'), :class => 'btn btn-success' %></p>
- <% end %>
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+  <p>
+    <%= b.check_box id: "answers_ids_#{b.object_id}" %>
+    <%= b.label %>
+  </p>
+<% end %>
+
+<%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-success' %>
+<br><br>
+<p><%= form.submit t('.next'), :class => 'btn btn-success' %></p>
+<% end %>

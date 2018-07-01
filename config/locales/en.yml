@@ -116,6 +116,8 @@ en:
         header: "Edit test"
       update: 
         success: "Test edited!"
+      form_inline:
+        submit: 'OK'
     questions:
       new: 
         header: "New question"

@@ -120,6 +120,8 @@ ru:
         header: "Редактировать тест"
       update: 
         success: "Тест изменён!"
+      form_inline:
+        submit: "OK"
     questions:
       new: 
         header: "Новый вопрос"
