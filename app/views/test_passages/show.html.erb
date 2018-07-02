@@ -2,12 +2,14 @@
 
 <div class="progress test-progress">
   <%= content_tag :div, '',
-                  class: 'progress progress-bar progress-bar-striped bg-success',
+                  class: 'progress progress-bar bg-success',
                   id: 'test-progress',
                   style: "",
                   data: { question_number: @test_passage.current_question_index,
                           questions_count: @test_passage.questions_count } %>
 </div>
+
+<br>
 
 <p><strong><%= @test_passage.current_question.body %></strong></p>
 

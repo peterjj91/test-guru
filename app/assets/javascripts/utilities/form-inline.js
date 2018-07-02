@@ -1,40 +1,42 @@
-document.addEventListener('turbolinks:load', function () {
-  // var control = document.querySelectorAll('.form-inline-link')
+document.addEventListener('turbolinks:load', function() {
+  var elements = document.querySelectorAll('.form-inline-link')
 
-  // if (control.length) {
-  //   for (var i = 0; i < control.length; i++) {
-  //     control[i].addEventListener('click', formInlineLinkHandler)
-  //   }
-  // }
-
-  $('.form-inline-link').on('click', formInlineLinkHandler)
+  if (elements) {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', formInlineLinkHandler)
+    }
+  }
 
   var errors = document.querySelector('.resource-errors')
+  var editInline = document.querySelector('.edit-inline')
 
-  if (errors) {
-    var resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
+  if (errors && editInline) {
+    formLinkHandler(errors.dataset.resourceId)
+  }
+
+  function formInlineLinkHandler(event) {
+    event.preventDefault();
+
+    var testId = this.dataset.testId
+    formLinkHandler(testId)
+  }
+
+  function formLinkHandler(id) {
+    var dataSelector = `[data-test-id="${id}"]`
+    var link = document.querySelector(`.form-inline-link${dataSelector}`)
+    var form = document.querySelector(`.form-inline${dataSelector}`)
+    var title = document.querySelector(`.test-title${dataSelector}`)
+
+    if (link) {
+      if (form.classList.contains('d-none')) {
+        title.classList.add('d-none');
+        form.classList.remove('d-none');
+        link.textContent = "Cancel";
+      } else {
+        title.classList.remove('d-none');
+        form.classList.add('d-none');
+        link.textContent = "Edit"
+      }
+    }
   }
 });
-
-function formInlineLinkHandler(event) {
-  event.preventDefault()
-
-  var testId = this.dataset.testId
-  formInlineHandler(testId)
-}
-
-function formInlineHandler(testId) {
-  var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]') 
-  var $testTitle = $('.test-title[data-test-id="' + testId + '"]')
-  var $formInline = $('.form-inline[data-test-id="' + testId + '"]')
-
-  $testTitle.toggle()
-  $formInline.toggle()
-
-  if ($formInline.is(':visible')) {
-    link.textContent = 'Cancel'
-  } else {
-    link.textContent = 'Edit'
-  }
-}
