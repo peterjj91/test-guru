@@ -8,11 +8,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_entry_not_found
 
   def default_url_options
-    if I18n.default_locale == I18n.locale
-      Rails.application.config.action_controller.default_url_options
-    else
-      Rails.application.config.action_controller.default_url_options.merge(lang: I18n.locale)
-    end
+    I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
   end
 
   private
