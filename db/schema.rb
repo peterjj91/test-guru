@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20180710201603) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
+    t.bigint "user_id"
+    t.bigint "question_id"
     t.string "gist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20180710201603) do
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "test_id"
-    t.integer "current_question_id"
+    t.bigint "user_id"
+    t.bigint "test_id"
+    t.bigint "current_question_id"
     t.integer "correct_question", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,4 +98,8 @@ ActiveRecord::Schema.define(version: 20180710201603) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
+  add_foreign_key "test_passages", "tests"
+  add_foreign_key "test_passages", "users"
 end
