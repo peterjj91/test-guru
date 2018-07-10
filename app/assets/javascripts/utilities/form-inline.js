@@ -22,10 +22,10 @@ document.addEventListener('turbolinks:load', function() {
   }
 
   function formLinkHandler(id) {
-    var dataSelector = `[data-test-id="${id}"]`
-    var link = document.querySelector(`.form-inline-link${dataSelector}`)
-    var form = document.querySelector(`.form-inline${dataSelector}`)
-    var title = document.querySelector(`.test-title${dataSelector}`)
+    var dataSelector = '[data-test-id="${id}"]'
+    var link = document.querySelector('.form-inline-link${dataSelector}')
+    var form = document.querySelector('.form-inline${dataSelector}')
+    var title = document.querySelector('.test-title${dataSelector}')
 
     if (link) {
       if (form.classList.contains('d-none')) {

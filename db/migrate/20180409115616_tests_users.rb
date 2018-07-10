@@ -1,5 +1,5 @@
 class TestsUsers < ActiveRecord::Migration[5.1]
-  def change
+  def up
     create_table :tests_users do |t|
       t.integer :test_id
       t.integer :user_id
