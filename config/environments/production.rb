@@ -61,9 +61,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "test-guru_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'git.heroku.com/vast-harbor-18667' }
+  config.action_mailer.default_url_options = { host: 'vast-harbor-18667.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_setting = {
+  config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
     user_name:            ENV['SMTP_USERNAME'],
