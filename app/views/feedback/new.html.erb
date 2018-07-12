@@ -1,0 +1,10 @@
+<h1>Отправьте нам сообщение</h1>
+<%= form_with url: feedback_sendmessage_path, local: true do |f| %>
+  <p>
+    <%= f.label :message %>
+    <%= f.text_area :message, id: :message, rows: 7, cols: 60 %>
+  </p>
+  <p>
+    <%= f.submit 'Отправить' %>
+  </p>
+<% end %>
