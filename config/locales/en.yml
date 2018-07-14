@@ -132,6 +132,12 @@ en:
         question: "Question"
         gist: "Gist"
 
+  feedback:
+    new: 
+      header: 'Send us a message'
+      label: 'Text message'
+      submit: 'Send'
+
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
