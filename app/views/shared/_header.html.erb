@@ -19,6 +19,11 @@
             <%= select_language %>              
           </li>
           <li class="nav-link">
+            <%= link_to feedback_new_path do %>
+              <%= octicon 'mail' %>
+            <% end %>
+          </li>
+          <li class="nav-link">
             <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn", "nav-link"] %>
           </li>
         </ul>

@@ -22,6 +22,9 @@
     end
   end
 
+  get 'feedback/new'
+  post 'feedback/sendmessage'
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member

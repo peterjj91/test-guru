@@ -38,3 +38,5 @@ __MACOSX
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+# Ignore encrypted secrets key file.
+config/secrets.yml.key

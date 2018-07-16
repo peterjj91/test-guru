@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180629053925) do
+ActiveRecord::Schema.define(version: 20180710201603) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false, null: false
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20180629053925) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
+    t.bigint "user_id"
+    t.bigint "question_id"
     t.string "gist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,9 +47,9 @@ ActiveRecord::Schema.define(version: 20180629053925) do
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "test_id"
-    t.integer "current_question_id"
+    t.bigint "user_id"
+    t.bigint "test_id"
+    t.bigint "current_question_id"
     t.integer "correct_question", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,6 +67,8 @@ ActiveRecord::Schema.define(version: 20180629053925) do
     t.integer "category_id"
     t.integer "user_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -93,4 +98,8 @@ ActiveRecord::Schema.define(version: 20180629053925) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
+  add_foreign_key "test_passages", "tests"
+  add_foreign_key "test_passages", "users"
 end

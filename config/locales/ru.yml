@@ -136,6 +136,12 @@ ru:
         question: "Вопрос"
         gist: "Gist"
 
+  feedback:
+    new: 
+      header: 'Отправьте нам сообщение'
+      label: 'Тест сообщения'
+      submit: 'Отправить'
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGutu!"
