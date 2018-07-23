@@ -79,7 +79,7 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       score: "Your score"
-      answered_correctly: "Answered correctly for %{correct_question} of %{questions_count} questions"
+      answered_correctly: "Answered correctly for %{correct_questions} of %{questions_count} questions"
     show:
       header: "Passing the test"
       next: "Next"
@@ -106,12 +106,14 @@ en:
         delete: "Delete"
       index:
         header: "Tricky Tests"
+        passage_time: "Passage time(secs)"
       new: 
         header: "New test"
       show: 
         title: "Title"
         level: "Level"
         questions: "Questions"
+        tests_list: "Tests list"
       edit: 
         header: "Edit test"
       update: 

@@ -25,6 +25,11 @@
       </div>
     </div>
 
+    <p>
+      <%= form.label :passage_time %><br>
+      <%= form.number_field :passage_time, id: :passage_time, class: 'form-control' %>
+    </p>
+
     <div class="form-group row">
       <div class="col-sm-3">
         <%= form.label :category_id, :class => 'col-form-label' %>

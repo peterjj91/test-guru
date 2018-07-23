@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180710201603) do
+ActiveRecord::Schema.define(version: 20180723111534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,9 +50,11 @@ ActiveRecord::Schema.define(version: 20180710201603) do
     t.bigint "user_id"
     t.bigint "test_id"
     t.bigint "current_question_id"
-    t.integer "correct_question", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "correct_questions", default: 0
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id", "user_id"], name: "index_test_passages_on_test_id_and_user_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180710201603) do
     t.datetime "updated_at", null: false
     t.integer "category_id"
     t.integer "user_id"
+    t.integer "passage_time"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"

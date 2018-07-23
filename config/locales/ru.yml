@@ -83,7 +83,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершён!"
       score: "Ваши очки"
-      answered_correctly: "Правильно ответили на %{correct_question} их %{questions_count} вопросов."
+      answered_correctly: "Правильно ответили на %{correct_questions} их %{questions_count} вопросов."
     show:
       header: "Прохождение теста"
       next: "Дальше"
@@ -110,12 +110,14 @@ ru:
         delete: "Удалить"
       index:
         header: "Доступные Тесты"
+        passage_time: "Время прохождения(сек)"
       new: 
         header: "Новый тест"
       show:
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
+        tests_list: "Список тестов"
       edit: 
         header: "Редактировать тест"
       update: 
