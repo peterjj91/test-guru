@@ -5,6 +5,9 @@
   devise_for :users, controllers: { sessions_path: 'sessions' },
              path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
   
+  resources :achievements, only: :index
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
@@ -33,6 +36,8 @@
         resources :answers, shallow: true
       end
     end
+
+    resources :badges
 
     resources :gists, only: :index
   end

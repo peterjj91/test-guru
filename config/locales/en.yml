@@ -133,6 +133,59 @@ en:
         user: "User"
         question: "Question"
         gist: "Gist"
+    badges:
+      index:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        image: "Picture"
+        actions: "Action"
+      new:
+        name: "Title"
+        header: "Awards"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+        create: "Create badge"
+      edit:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+      show:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+        show_button: "View"
+        edit_button: "Edit"
+        delete_button: "Delete"
+        delete_confirmation: "Are you sure to delete?"
+        badges_list: "Badges list"
+        edit: "Edit"
+
+  badges:
+    index:
+      header: "Awards"
+      name: "Title"
+      new_badge: "New badge"
+      rule_name: "Rule Names"
+      rule_parameter: "Rules settings"
+      image: "Picture"
+    new:
+      header: "Awards"
+      name: "Title"
+      new_badge: "New badge"
+      rule_name: "Rule Names"
+      rule_parameter: "Rules settings"
+      image: "Picture"
 
   feedback:
     new: 

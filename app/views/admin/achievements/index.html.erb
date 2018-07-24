@@ -1,0 +1,19 @@
+<h1><%= t('.achievements')%></h1>
+<table class="table">
+  <thead class="thead">
+    <th><%= t('.badge_name') %></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @achieved_badges.each do |item_key, item_value| %>
+      <tr>
+        <td><%= item_key[0] %></td>
+        <td>
+          <% item_value.times do  %>
+            <%= octicon item_key[1] %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

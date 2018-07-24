@@ -28,8 +28,6 @@ ru:
         update: "Обновить аккаунт"
         delete: "Удалить мой аккаунт"
         login: "Войти"
-      test_passages:
-        next: "Дальше"
     label:
       test:
         title: "Название"
@@ -137,6 +135,59 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         gist: "Gist"
+    badges:
+      index:
+        header: "Награды"
+        name: "Название"
+        new_badge: "Новая награда"
+        rule_name: "Названия правила"
+        rule_parameter: "Параметры правил"
+        image: "Картинка"
+        actions: "Действие"
+      new:
+        name: "Название"
+        header: "Награды"
+        new_badge: "Новая награда"
+        rule_name: "Названия правила"
+        rule_parameter: "Параметры правил"
+        badge_image: "Картинка"
+        create: "Создать награду"
+      edit:
+        header: "Награды"
+        name: "Название"
+        new_badge: "Новая награда"
+        rule_name: "Названия правила"
+        rule_parameter: "Параметры правил"
+        image: "Картинка"
+      show:
+        header: "Награды"
+        name: "Название"
+        new_badge: "Новая награда"
+        rule_name: "Названия правила"
+        rule_parameter: "Параметры правил"
+        image: "Картинка"
+        show_button: "Подробнее"
+        edit_button: "Редактировать"
+        delete_button: "Удалить"
+        delete_confirmation: "Точно удалить награду?"
+        badges_list: "Список наград"
+        edit: "Редактировать"
+
+  badges:
+    index:
+      header: "Награды"
+      name: "Название"
+      new_badge: "Новая награда"
+      rule_name: "Названия правила"
+      rule_parameter: "Параметры правил"
+      image: "Картинка"
+    new: 
+      header: "Награды"
+      name: "Название"
+      new_badge: "Новая награда"
+      rule_name: "Названия правила"
+      rule_parameter: "Параметры правил"
+      image: "Картинка"
 
   feedback:
     new: 

@@ -24,6 +24,11 @@
             <% end %>
           </li>
           <li class="nav-link">
+            <%= link_to badges_path do %>
+              <%= octicon 'star' %>
+            <% end %>
+          </li>
+          <li class="nav-link">
             <%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: ["btn", "nav-link"] %>
           </li>
         </ul>
