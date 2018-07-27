@@ -49,7 +49,7 @@ class TestPassage < ApplicationRecord
   end
   
   def finish!
-    self.end_time = Time.current
+    self.update(end_time: Time.current)
     self.save
   end
 
