@@ -1,0 +1,15 @@
+<tr>
+  <td class="align-middle">
+    <%= content_tag :span, badge.name %>
+  </td>
+  <td class="align-middle"><%= badge.rule_name %></td>
+  <td class="align-middle"><%= badge.rule_parameter %></td>
+  <td class="align-middle"><%= octicon badge.badge_image %></td>
+  <td class="align-middle"><%= link_to t('admin.badges.show.show_button'), admin_badge_path(badge) %></td>
+  <td class="align-middle">
+    <%= link_to t('admin.badges.show.edit_button'), edit_admin_badge_path(badge) %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('admin.badges.show.delete_button'), admin_badge_path(badge), method: :delete, data: {confirm: t('admin.badges.show.delete_confirmation')} %>
+  </td>
+</tr>

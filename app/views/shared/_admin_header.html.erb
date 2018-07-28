@@ -18,6 +18,11 @@
             <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: ["btn btn-success", "nav-link"] %>
           </li>
           <li class="nav-link">
+            <%= link_to admin_badges_path do %>
+              <%= octicon 'star' %>
+            <% end %>
+          </li>
+          <li class="nav-link">
             <%= link_to t('.all_gists'), admin_gists_path, class: ['btn nav-link'] %>
           </li>
           <li class="nav-link">

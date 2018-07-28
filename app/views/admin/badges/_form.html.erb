@@ -1,0 +1,27 @@
+<div class="form-group">
+  <%= form_with(model: [:admin, @badge], local: true) do |form| %>
+    <%= render 'shared/errors', resource: @badge %>
+
+    <p>
+      <%= form.label :name, t('admin.badges.new.name') %><br>
+      <%= form.text_field :name, id: :badge_name, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :rule_name, t('admin.badges.new.rule_name') %><br>
+      <%= form.select :rule_name, Badge.rules, {prompt: true}, {class: 'form-control'} %>
+    </p>
+
+    <p>
+      <%= form.label :rule_parameter, t('admin.badges.new.rule_parameter') %><br>
+      <%= form.text_field :rule_parameter, id: :rule_parameter, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :badge_image, t('admin.badges.new.badge_image') %><br>
+      <%= form.select :badge_image, Octicons::OCTICON_SYMBOLS.keys, {prompt: true}, {class: 'form-control'} %>
+    </p>
+
+    <%= form.submit t('admin.badges.new.create'), class: 'btn btn-primary' %>
+  <% end %>
+</div>

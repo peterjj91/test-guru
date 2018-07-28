@@ -5,16 +5,38 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    @test_passage.finish!
+
+    new_badges = CheckAchievements.new(@test_passage).call
+    
+    if new_badges.count > 0
+      current_user.badges << new_badges
+      flash[:notice] = "You have #{new_badges.count} new badges" if new_badges.count > 0
+    end
+  end
+
+  # def update
+  #   @test_passage.accept!(params[:answer_ids])
+
+  #   if @test_passage.completed?
+  #     TestsMailer.completed_test(@test_passage).deliver_now
+  #     redirect_to result_test_passage_path(@test_passage)
+  #   else
+  #     render :show
+  #   end
+  # end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+    if @test_passage.remaining_time <= 0
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      @test_passage.accept!(params[:answers_ids])
+      if @test_passage.completed?
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     end
   end
 

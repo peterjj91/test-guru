@@ -1,4 +1,12 @@
- <h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
+<h1><%= t('.header') %> <%= @test_passage.test.title %></h1>
+
+<% if @test_passage.test.with_time_limit? %>
+  <%= content_tag :div,
+      class: 'timer',
+      data: { remaining_time: @test_passage.remaining_time } do %>
+    <%= content_tag :span, nil, class: 'timer_label' %>
+  <% end %>
+<% end %>
 
 <div class="progress test-progress">
   <%= content_tag :div, '',

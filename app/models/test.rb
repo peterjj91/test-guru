@@ -20,4 +20,8 @@ class Test < ApplicationRecord
   def self.tests_titles_by_category (category_title)
     Test.by_category_title(category_title).pluck(:title)
   end
+
+  def with_time_limit?
+    self.passage_time > 0
+  end
 end

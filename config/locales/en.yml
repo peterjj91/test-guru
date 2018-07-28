@@ -79,7 +79,7 @@ en:
     result:
       header: "The %{title} Test was Completed!"
       score: "Your score"
-      answered_correctly: "Answered correctly for %{correct_question} of %{questions_count} questions"
+      answered_correctly: "Answered correctly for %{correct_questions} of %{questions_count} questions"
     show:
       header: "Passing the test"
       next: "Next"
@@ -106,12 +106,14 @@ en:
         delete: "Delete"
       index:
         header: "Tricky Tests"
+        passage_time: "Passage time(secs)"
       new: 
         header: "New test"
       show: 
         title: "Title"
         level: "Level"
         questions: "Questions"
+        tests_list: "Tests list"
       edit: 
         header: "Edit test"
       update: 
@@ -131,6 +133,59 @@ en:
         user: "User"
         question: "Question"
         gist: "Gist"
+    badges:
+      index:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        image: "Picture"
+        actions: "Action"
+      new:
+        name: "Title"
+        header: "Awards"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+        create: "Create badge"
+      edit:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+      show:
+        header: "Awards"
+        name: "Title"
+        new_badge: "New badge"
+        rule_name: "Rule Names"
+        rule_parameter: "Rules settings"
+        badge_image: "Picture"
+        show_button: "View"
+        edit_button: "Edit"
+        delete_button: "Delete"
+        delete_confirmation: "Are you sure to delete?"
+        badges_list: "Badges list"
+        edit: "Edit"
+
+  badges:
+    index:
+      header: "Awards"
+      name: "Title"
+      new_badge: "New badge"
+      rule_name: "Rule Names"
+      rule_parameter: "Rules settings"
+      image: "Picture"
+    new:
+      header: "Awards"
+      name: "Title"
+      new_badge: "New badge"
+      rule_name: "Rule Names"
+      rule_parameter: "Rules settings"
+      image: "Picture"
 
   feedback:
     new: 
